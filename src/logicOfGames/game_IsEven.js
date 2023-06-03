@@ -1,27 +1,20 @@
-import getRandome from '../getRandomNumber.js';
 import readlineSync from 'readline-sync';
+import getRandome from '../getRandomNumber.js';
 import greeting from '../cli.js';
 
-const number = getRandome(1000, 0);
-const isEven = (number) => {
-    let res;
-    if (number % 2 === 0) {
-        res = true;
-    }
-    return res;
-}
-
 const runGame = () => {
+  greeting();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  console.log(`Question: ${number}`);
-  const answer = readlineSync.question('Your answer: ')
-  const correctAnswer = isEven();
-  if (correctAnswer === answer) {
-    return 'Correct!';
-  } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was "${correctAnswer}"`);
-    console.log(`Let's try again, ${nameUser}!`);
+  for (let i = 0; i < 3; i += 1) {
+    const number = getRandome(1000, 0);
+    console.log(`Question: ${number}`);
+    const answer = readlineSync.question('Your answer: ');
+    if ((number % 2 === 0 && answer === 'yes') || (number % 2 !== 2 && answer === 'no')) {
+      console.log('Correct!');
+    } else {
+      console.log(`${answer} is wrong answer ;(. Correct answer was "no"\nLet's try again)}!`);
+    }
   }
-    return 'Congratulation!'
+  return;
 };
 export default runGame;
