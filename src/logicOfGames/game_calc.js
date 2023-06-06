@@ -2,8 +2,6 @@ import readlineSync from 'readline-sync';
 import getRandome from '../getRandomNumber.js';
 
 const arr = ['+', '-', '*'];
-const getRandomeIndex = Math.floor(Math.random() * arr.length);
-
 const calculat = (number1, operand, number2) => {
   switch (operand) {
     case '+':
@@ -27,12 +25,13 @@ const gameCalc = () => {
   for (let i = 0; i < 3; i += 1) {
     const number1 = getRandome(20, 1);
     const number2 = getRandome(20, 1);
+    const getRandomeIndex = Math.floor(Math.random() * arr.length);
     const operand = arr[getRandomeIndex];
 
     console.log(`Question: ${number1} ${operand} ${number2}`);
     const answer = readlineSync.question('Your answer: ');
     const correctAnswer = calculat(number1, operand, number2);
-    if (answer === correctAnswer) {
+    if (Number(answer) === correctAnswer) {
       count += 1;
       console.log('Correct!');
     } else {
