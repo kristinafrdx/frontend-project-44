@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import getRandome from '../getRandomNumber.js';
+import { getRandome } from '../index.js';
 
 const arr = ['+', '-', '*'];
 const calculat = (number1, operand, number2) => {
