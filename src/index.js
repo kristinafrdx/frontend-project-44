@@ -29,7 +29,15 @@ export const nameUsers = () => {
     return `${nameUser}!`
   };
 
-
+//question
+export const exercize = () => {
+  return(`Question: ${getRandome(50, 1)} ${getRandome(50, 1)}`)
   
+}
+
+//your ans
+export const answer = () => {
+  return readlineSync.question('Your answer: ')
+}
 
 

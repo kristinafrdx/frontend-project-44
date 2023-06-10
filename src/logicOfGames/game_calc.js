@@ -36,7 +36,7 @@ const gameCalc = () => {
       console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      return ("Let's try again!");
+      return (`"Let's try again, ${nameUser}!"`);
     }
   }
   if (count === 3) {
