@@ -1,5 +1,6 @@
-import readlineSync from 'readline-sync';
+import readlineSync, { question } from 'readline-sync';
 import { getRandome } from '../index.js';
+import startGame from '../index.js';
 
 const arr = ['+', '-', '*'];
 const calculat = (number1, operand, number2) => {
@@ -15,7 +16,23 @@ const calculat = (number1, operand, number2) => {
   }
 };
 
-const gameCalc = () => {
+const description = 'What is the result of the expression?';
+
+const getQuestionAndCorrectAnswer = () => {
+  const number1 = getRandome(50, 1);
+  const number2 = getRandome(50, 1);
+  const getRandomeIndex = Math.floor(Math.random() * arr.length);
+  const operand = arr[getRandomeIndex];
+  const question = `${number1} ${operand} ${number2}`;
+  const correctAnswer = calculat(number1, operand, number2);
+  return [question, String(correctAnswer)];
+}
+
+export default () => {
+  startGame(description, getQuestionAndCorrectAnswer);
+}
+
+/* const gameCalc = () => {
   console.log('Welcome to the Brain Games!');
   const nameUser = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${nameUser}!`);
@@ -45,3 +62,5 @@ const gameCalc = () => {
 };
 
 export default gameCalc;
+
+*/

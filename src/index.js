@@ -13,26 +13,6 @@ export const getRandomeOperand = () => {
   return operand;
 };
 
-// greeting
-export const greeting = () => {
-  console.log('Welcome to the Brain Games!');
-  const nameUser = readlineSync.question('May I have your name? ');
-  return (`Hello, ${nameUser}!`);
-};
-
-// nameUser
-export const nameUsers = () => {
-  console.log('Welcome to the Brain Games!');
-  const nameUser = readlineSync.question('May I have your name? ');
-  return `${nameUser}!`;
-};
-
-// question
-export const exercize = () => (`Question: ${getRandome(50, 1)} ${getRandome(50, 1)}`);
-
-// your ans
-export const answer = () => readlineSync.question('Your answer: ');
-
 export const getNOD = () => {
   let num1 = getRandome(1, 10);
   let num2 = getRandome(1, 10);
@@ -45,3 +25,32 @@ export const getNOD = () => {
   }
   return num1 + num2;
 };
+
+const startGame = (description, getQuestionAndCorrectAnswer) => {
+  // greeting 
+
+  console.log('Welcome to the Brain Games!');
+  const nameUser = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${nameUser}!`);
+
+  //описание игры
+  console.log(description)
+
+  //запуск 3-ех раундов
+
+  for (let i = 0; i < 3; i += 1) {
+    const [question, correctAnswer] = getQuestionAndCorrectAnswer()
+    console.log(`Quection: ${question}`)
+    const answer = readlineSync.question('Your answer: ')
+    if (answer === correctAnswer) {
+      console.log('Correct!')
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${nameUser}!`);
+      return;
+    }
+  }
+  console.log(`Congratulations, ${nameUser}!`);
+}
+
+export default startGame;

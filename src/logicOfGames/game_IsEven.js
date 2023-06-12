@@ -1,9 +1,23 @@
-import readlineSync from 'readline-sync';
+import readlineSync, { question } from 'readline-sync';
 import { getRandome } from '../index.js';
+import startGame from '../index.js';
 
 const isEven = (number) => number % 2 === 0;
+const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
-const game = () => {
+const getQuestionAndCorrectAnswer = () => {
+const number = getRandome(100, 1)
+const question = `${number}`
+const correctAnswer = isEven(number) ? 'yes' : 'no';
+return [question, correctAnswer]
+}
+
+export default () => {
+  startGame(description, getQuestionAndCorrectAnswer)
+}
+
+
+  /* const game = () => {
   console.log('Welcome to the Brain Games!');
   const nameUser = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${nameUser}!`);
@@ -28,3 +42,5 @@ const game = () => {
   }
 };
 export default game;
+
+*/

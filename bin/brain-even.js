@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import game from '../src/logicOfGames/game_IsEven.js';
+import startGame from '../src/logicOfGames/game_IsEven.js';
 
-console.log(game());
+console.log(startGame());
