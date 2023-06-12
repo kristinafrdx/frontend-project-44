@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 // get randome number
-export const getRandome = (max, min) => Math.floor(Math.random() * (max - min) + min);
+export const getRandome = (max, min) => Math.floor(Math.random() * (max - min + 1) + min);
 
 // console.log(getRandome(1000, 0));
 
@@ -39,11 +39,11 @@ const startGame = (description, getQuestionAndCorrectAnswer) => {
   //запуск 3-ех раундов
 
   for (let i = 0; i < 3; i += 1) {
-    const [question, correctAnswer] = getQuestionAndCorrectAnswer()
-    console.log(`Quection: ${question}`)
-    const answer = readlineSync.question('Your answer: ')
+    const [question, correctAnswer] = getQuestionAndCorrectAnswer();
+    console.log(`Quection: ${question}`);
+    const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
-      console.log('Correct!')
+      console.log('Correct!');
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${nameUser}!`);
