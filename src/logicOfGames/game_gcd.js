@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { getRandome } from '../index.js';
 import startGame from '../index.js';
 
@@ -15,22 +14,21 @@ export const getNOD = (number1, number2) => {
   return num1 + num2;
 };
 
-const description = 'Find the greatest common divisor of given numbers.'
+const description = 'Find the greatest common divisor of given numbers.';
 
 const getQuestionAndCorrectAnswer = () => {
   const number1 = getRandome(20, 1);
   const number2 = getRandome(20, 1);
-  const question = `${number1} ${number2}`
-  const correctAnswer = getNOD(number1, number2)
+  const question = `${number1} ${number2}`;
+  const correctAnswer = getNOD(number1, number2);
   return [question, String(correctAnswer)];
 };
 
 export default () => {
   startGame(description, getQuestionAndCorrectAnswer);
-}
+};
 
-
-/* 
+/*
 const gameGCD = () => {
   console.log('Welcome to the Brain Games!');
   const nameUser = readlineSync.question('May I have your name? ');

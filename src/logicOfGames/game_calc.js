@@ -1,9 +1,8 @@
-import readlineSync, { question } from 'readline-sync';
 import { getRandome } from '../index.js';
 import startGame from '../index.js';
 
 const arr = ['+', '-', '*'];
-const calculat = (number1, operand, number2) => {
+export const calculat = (number1, operand, number2) => {
   switch (operand) {
     case '+':
       return number1 + number2;
@@ -26,11 +25,11 @@ const getQuestionAndCorrectAnswer = () => {
   const question = `${number1} ${operand} ${number2}`;
   const correctAnswer = calculat(number1, operand, number2);
   return [question, String(correctAnswer)];
-}
+};
 
 export default () => {
   startGame(description, getQuestionAndCorrectAnswer);
-}
+};
 
 /* const gameCalc = () => {
   console.log('Welcome to the Brain Games!');

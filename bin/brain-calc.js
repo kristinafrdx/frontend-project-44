@@ -2,4 +2,4 @@
 
 import startGame from '../src/logicOfGames/game_calc.js';
 
-console.log(startGame())
+console.log(startGame());

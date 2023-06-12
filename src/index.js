@@ -27,16 +27,16 @@ export const getNOD = () => {
 };
 
 const startGame = (description, getQuestionAndCorrectAnswer) => {
-  // greeting 
+// greeting
 
   console.log('Welcome to the Brain Games!');
   const nameUser = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${nameUser}!`);
 
-  //описание игры
-  console.log(description)
+  // описание игры
+  console.log(description);
 
-  //запуск 3-ех раундов
+  // запуск 3-ех раундов
 
   for (let i = 0; i < 3; i += 1) {
     const [question, correctAnswer] = getQuestionAndCorrectAnswer();
@@ -51,6 +51,6 @@ const startGame = (description, getQuestionAndCorrectAnswer) => {
     }
   }
   console.log(`Congratulations, ${nameUser}!`);
-}
+};
 
 export default startGame;

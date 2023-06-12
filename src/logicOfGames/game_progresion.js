@@ -1,33 +1,30 @@
-import readlineSync from "readline-sync";
-import startGame from "../index.js";
-import { getRandome } from "../index.js";
-
+import startGame from '../index.js';
+import { getRandome } from '../index.js';
 
 const getProgression = (firstNum, length, step) => {
-  let result = [];
-    for (let i = firstNum; i < length; i += step) {
-      if (result.length !== 10) 
+  const result = [];
+  for (let i = firstNum; i < length; i += step) {
+    if (result.length !== 10) {
       result.push(i);
     }
-return result
-}
+  }
+  return result;
+};
 
 const description = 'What number is missing in the progression?';
 
 const getQuestionAndCorrectAnswer = () => {
   const step = getRandome(5, 1);
   const firstNum = getRandome(10, 1);
-  const length = firstNum + (step * 10)
-
+  const length = firstNum + (step * 10);
   const progression = getProgression(firstNum, length, step);
   const unknowIndex = getRandome(progression.length - 1, 0);
-  const correctAnswer = String(progression[unknowIndex])
+  const correctAnswer = String(progression[unknowIndex]);
   progression[unknowIndex] = '..';
   const question = progression.join(' ');
   return [question, correctAnswer];
-}
+};
 
 export default () => {
-    startGame(description, getQuestionAndCorrectAnswer);
-}
-
+  startGame(description, getQuestionAndCorrectAnswer);
+};
