@@ -40,7 +40,7 @@ export const startGame = (description, getQuestionAndCorrectAnswer) => {
 
   for (let i = 0; i < 3; i += 1) {
     const [question, correctAnswer] = getQuestionAndCorrectAnswer();
-    console.log(`Quection: ${question}`);
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer === correctAnswer) {
       console.log('Correct!');
