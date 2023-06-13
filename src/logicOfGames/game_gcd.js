@@ -26,32 +26,3 @@ const gameGCD = () => {
 export default () => {
   startGame(description, gameGCD);
 };
-
-/*
-const gameGCD = () => {
-  console.log('Welcome to the Brain Games!');
-  const nameUser = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${nameUser}!`);
-  console.log('Find the greatest common divisor of given numbers.');
-  let count = 0;
-  for (let i = 0; i < 3; i += 1) {
-    const randomeNum1 = getRandome(20, 1);
-    const randomeNum2 = getRandome(20, 1);
-    console.log(`Quection: ${randomeNum1} ${randomeNum2}`);
-    const answer = readlineSync.question('Your answer: ');
-    const correctAnswer = getNOD(randomeNum1, randomeNum2);
-    if (String(correctAnswer) === answer) {
-      count += 1;
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      return `Let's try again, ${nameUser}!`;
-    }
-  }
-  if (count === 3) {
-    return `Congratulations, ${nameUser}!`;
-  }
-};
-
-export default gameGCD;
-*/
