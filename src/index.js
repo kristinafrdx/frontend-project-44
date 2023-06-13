@@ -3,16 +3,7 @@ import readlineSync from 'readline-sync';
 // get randome number
 export const getRandome = (max, min) => Math.floor(Math.random() * (max - min + 1) + min);
 
-// console.log(getRandome(1000, 0));
-
-// get randome operand
-export const getRandomeOperand = () => {
-  const arr = ['+', '-', '*'];
-  const getRandomeIndex = Math.floor(Math.random() * arr.length);
-  const operand = arr[getRandomeIndex];
-  return operand;
-};
-
+// get NOD
 export const getNOD = () => {
   let num1 = getRandome(1, 10);
   let num2 = getRandome(1, 10);
@@ -26,6 +17,7 @@ export const getNOD = () => {
   return num1 + num2;
 };
 
+// start game
 export const startGame = (description, getQuestionAndCorrectAnswer) => {
 // greeting
 
