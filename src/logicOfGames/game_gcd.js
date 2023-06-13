@@ -1,5 +1,4 @@
-import { getRandome } from '../index.js';
-import startGame from '../index.js';
+import { getRandome, startGame } from '../index.js';
 
 export const getNOD = (number1, number2) => {
   let num1 = number1;
@@ -16,7 +15,7 @@ export const getNOD = (number1, number2) => {
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getQuestionAndCorrectAnswer = () => {
+const gameGCD = () => {
   const number1 = getRandome(20, 1);
   const number2 = getRandome(20, 1);
   const question = `${number1} ${number2}`;
@@ -25,7 +24,7 @@ const getQuestionAndCorrectAnswer = () => {
 };
 
 export default () => {
-  startGame(description, getQuestionAndCorrectAnswer);
+  startGame(description, gameGCD);
 };
 
 /*

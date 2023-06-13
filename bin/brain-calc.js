@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import startGame from '../src/logicOfGames/game_calc.js';
+import gameCalc from '../src/logicOfGames/game_calc.js';
 
-console.log(startGame());
+gameCalc();

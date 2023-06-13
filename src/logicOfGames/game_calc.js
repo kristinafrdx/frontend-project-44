@@ -1,5 +1,4 @@
-import { getRandome } from '../index.js';
-import startGame from '../index.js';
+import { getRandome, startGame } from '../index.js';
 
 const arr = ['+', '-', '*'];
 export const calculat = (number1, operand, number2) => {
@@ -12,12 +11,14 @@ export const calculat = (number1, operand, number2) => {
 
     case '*':
       return number1 * number2;
+    default:
+      throw new Error('Unknown operator');
   }
 };
 
 const description = 'What is the result of the expression?';
 
-const getQuestionAndCorrectAnswer = () => {
+const gameCalc = () => {
   const number1 = getRandome(50, 1);
   const number2 = getRandome(50, 1);
   const getRandomeIndex = Math.floor(Math.random() * arr.length);
@@ -28,7 +29,7 @@ const getQuestionAndCorrectAnswer = () => {
 };
 
 export default () => {
-  startGame(description, getQuestionAndCorrectAnswer);
+  startGame(description, gameCalc);
 };
 
 /* const gameCalc = () => {

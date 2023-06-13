@@ -1,10 +1,9 @@
-import { getRandome } from '../index.js';
-import startGame from '../index.js';
+import { getRandome, startGame } from '../index.js';
 
 const isEven = (number) => number % 2 === 0;
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getQuestionAndCorrectAnswer = () => {
+const gameIsEven = () => {
   const number = getRandome(100, 1);
   const question = `${number}`;
   const correctAnswer = isEven(number) ? 'yes' : 'no';
@@ -12,7 +11,7 @@ const getQuestionAndCorrectAnswer = () => {
 };
 
 export default () => {
-  startGame(description, getQuestionAndCorrectAnswer);
+  startGame(description, gameIsEven);
 };
 
 /* const game = () => {

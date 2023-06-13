@@ -1,5 +1,4 @@
-import startGame from '../index.js';
-import { getRandome } from '../index.js';
+import { getRandome, startGame } from '../index.js';
 
 const getProgression = (firstNum, length, step) => {
   const result = [];
@@ -13,7 +12,7 @@ const getProgression = (firstNum, length, step) => {
 
 const description = 'What number is missing in the progression?';
 
-const getQuestionAndCorrectAnswer = () => {
+const gameProgression = () => {
   const step = getRandome(5, 1);
   const firstNum = getRandome(10, 1);
   const length = firstNum + (step * 10);
@@ -26,5 +25,5 @@ const getQuestionAndCorrectAnswer = () => {
 };
 
 export default () => {
-  startGame(description, getQuestionAndCorrectAnswer);
+  startGame(description, gameProgression);
 };

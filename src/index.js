@@ -26,7 +26,7 @@ export const getNOD = () => {
   return num1 + num2;
 };
 
-const startGame = (description, getQuestionAndCorrectAnswer) => {
+export const startGame = (description, getQuestionAndCorrectAnswer) => {
 // greeting
 
   console.log('Welcome to the Brain Games!');
@@ -52,5 +52,3 @@ const startGame = (description, getQuestionAndCorrectAnswer) => {
   }
   console.log(`Congratulations, ${nameUser}!`);
 };
-
-export default startGame;
