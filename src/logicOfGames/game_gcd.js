@@ -1,4 +1,5 @@
-import { getRandome, startGame } from '../index.js';
+import startGame from '../index.js';
+import getRandome from '../utils.js';
 
 export const getNOD = (number1, number2) => {
   let num1 = number1;

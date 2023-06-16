@@ -1,4 +1,5 @@
-import { getRandome, startGame } from '../index.js';
+import startGame from '../index.js';
+import getRandome from '../utils.js';
 
 const arr = ['+', '-', '*'];
 export const calculat = (number1, operand, number2) => {

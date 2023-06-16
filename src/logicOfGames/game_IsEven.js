@@ -1,4 +1,5 @@
-import { getRandome, startGame } from '../index.js';
+import startGame from '../index.js';
+import getRandome from '../utils.js';
 
 const isEven = (number) => number % 2 === 0;
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';

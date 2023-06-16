@@ -1,4 +1,5 @@
-import { getRandome, startGame } from '../index.js';
+import startGame from '../index.js';
+import getRandome from '../utils.js';
 
 export const isPrime = (number) => {
   if (number > 0) {
