@@ -11,7 +11,7 @@ Five games for users. To start the game - write the name of the game. If correct
 ## The first game:
 Brain-even. A user get randome number. 'yes' - number is even. 'no' - number is not even.
 
-[![asciicast](https://asciinema.org/a/hNQl0cciQx5hE4sgqMAaaZcxF.svg)](https://asciinema.org/a/hNQl0cciQx5hE4sgqMAaaZcxF)
+[![asciicast](https://asciinema.org/a/sbgTFmVZH8hSeuxr7qXacmazu.svg)](https://asciinema.org/a/sbgTFmVZH8hSeuxr7qXacmazu)
 
 ## The second game:
 Brain-calc. A user get randome exercize with two randome number and operand ('+', '-', '*'). The correct answer will be solution that exercize. 
